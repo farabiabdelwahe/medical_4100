@@ -7,13 +7,13 @@
   tools:context=".activity.MainActivity">
 
   <View
+    android:id="@+id/bg_top_header"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    android:id="@+id/bg_top_header"
+    android:background="@drawable/ic_bg_topheader"
     app:layout_constraintHorizontal_bias="0.0"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    android:background="@drawable/ic_bg_topheader"/>
+    app:layout_constraintTop_toTopOf="parent" />
 
   <ImageView
     android:id="@+id/user_photo"
@@ -21,34 +21,34 @@
     android:layout_height="71dp"
     android:layout_marginStart="26dp"
     android:layout_marginTop="24dp"
-    app:layout_constraintStart_toStartOf="parent"
     android:src="@drawable/ic_app_ic"
+    app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
-    android:textSize="20sp"
-    android:text="@string/app_name"
     android:id="@+id/user_name"
-    android:textColor="#ffffff"
-    android:layout_marginTop="32dp"
-    android:layout_marginStart="18dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginStart="18dp"
+    android:layout_marginTop="32dp"
+    android:text="@string/app_name"
+    android:textColor="#ffffff"
+    android:textSize="20sp"
     app:layout_constraintStart_toEndOf="@id/user_photo"
 
-    app:layout_constraintTop_toTopOf="parent"/>
+    app:layout_constraintTop_toTopOf="parent" />
 
   <TextView
-    android:textSize="16sp"
-    android:text="@string/app_description"
     android:id="@+id/user_id"
-    android:textColor="#ffffff"
-    android:layout_marginTop="32dp"
-    android:layout_marginStart="18dp"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:layout_marginStart="18dp"
+    android:layout_marginTop="32dp"
+    android:text="@string/app_description"
+    android:textColor="#ffffff"
+    android:textSize="16sp"
     app:layout_constraintStart_toEndOf="@id/user_photo"
-    app:layout_constraintTop_toTopOf="@id/user_name"/>
+    app:layout_constraintTop_toTopOf="@id/user_name" />
 
   <GridLayout
     android:layout_width="match_parent"
@@ -66,6 +66,7 @@
     app:layout_editor_absoluteX="0dp">
 
     <androidx.cardview.widget.CardView
+      android:id="@+id/pharmacy_card"
       android:layout_width="0dp"
       android:layout_height="0dp"
       android:layout_rowWeight="1"
@@ -82,30 +83,32 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/pharmacy"/>
+          android:background="@drawable/pharmacy" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@string/pharmacy"
           android:layout_marginTop="8dp"
           android:fontFamily="@font/mo_re"
+          android:text="@string/pharmacy"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
       android:layout_width="0dp"
+      android:id="@+id/generaliste_card"
+
       android:layout_height="0dp"
       android:layout_rowWeight="1"
       android:layout_columnWeight="1"
@@ -113,6 +116,7 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
+      android:onClick="cardClicked"
       app:cardCornerRadius="8dp"
       app:cardElevation="6dp">
 
@@ -120,25 +124,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/doctor"/>
+          android:background="@drawable/doctor" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
+          android:gravity="center"
           android:text="@string/general_practitioner"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:gravity="center"
-          android:layout_marginTop="8dp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -152,6 +156,9 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
+      android:id="@+id/pulmo_card"
+      android:onClick="cardClicked"
+
       app:cardCornerRadius="8dp"
       app:cardElevation="6dp">
 
@@ -159,24 +166,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
-         android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/lung"/>
+          android:background="@drawable/lung" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
           android:text="@string/pulmonologist"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:layout_marginTop="8dp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -191,30 +198,33 @@
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
       app:cardCornerRadius="8dp"
+      android:onClick="cardClicked"
+      android:id="@+id/skin_card"
+
       app:cardElevation="6dp">
 
       <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/skin"/>
+          android:background="@drawable/skin" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@string/dermatologist"
           android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
+          android:text="@string/dermatologist"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -228,6 +238,9 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
+      android:onClick="cardClicked"
+      android:id="@+id/bone_card"
+
       app:cardCornerRadius="8dp"
       app:cardElevation="6dp">
 
@@ -235,24 +248,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/bone"/>
+          android:background="@drawable/bone" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
           android:text="@string/orthopedic"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:layout_marginTop="8dp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -266,6 +279,9 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
+      android:onClick="cardClicked"
+      android:id="@+id/gastro_card"
+
       app:cardCornerRadius="8dp"
       app:cardElevation="6dp">
 
@@ -273,24 +289,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/gastroenterologist"/>
+          android:background="@drawable/gastroenterologist" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
           android:text="@string/gastroenterologist"
-          android:layout_marginTop="8dp"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -304,6 +320,9 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
+      android:onClick="cardClicked"
+      android:id="@+id/ORL_card"
+
       app:cardCornerRadius="8dp"
       app:cardElevation="6dp">
 
@@ -311,24 +330,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/nose"/>
+          android:background="@drawable/nose" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
           android:text="@string/otolaryngologist"
-          android:layout_marginTop="8dp"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
@@ -342,6 +361,9 @@
       android:layout_marginRight="16dp"
       android:layout_marginBottom="16dp"
       android:background="@color/cardColor"
+      android:onClick="cardClicked"
+      android:id="@+id/dentiste_card"
+
       app:cardCornerRadius="8dp"
       app:cardElevation="6dp">
 
@@ -349,24 +371,24 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center_horizontal|center_vertical"
- android:gravity="center"
+        android:gravity="center"
         android:orientation="vertical">
 
         <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center_horizontal"
-          android:background="@drawable/tooth"/>
+          android:background="@drawable/tooth" />
 
         <TextView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:text="@string/dentiste"
           android:layout_marginTop="8dp"
+          android:fontFamily="@font/mo_re"
+          android:text="@string/dentiste"
           android:textColor="@color/textcardColor"
           android:textSize="14sp"
-          android:fontFamily="@font/mo_re"
-          android:textStyle="bold"/>
+          android:textStyle="bold" />
       </LinearLayout>
 
     </androidx.cardview.widget.CardView>
